@@ -1,6 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
+
 
 const Library = () => {
+
+  const deleteBookHandler = (id) =>{
+    //dispatch the delete book action here
+  }
+
+  const books = useSelector((state)=> state.books.books)
+
+  const booksRow
+
+
   return (
     <div className='library'>
       <h2>Library</h2>
