@@ -6,9 +6,11 @@ const initialState = {
 }
 
 const bookReducer = createReducer(initialState, (builder) =>{
-    builder.addCase(addBook, (state, action) =>{
+    builder
+        .addCase(addBook, (state, action) =>{
         state.books.push(action.payload)
-    }).addCase(deleteBook, (state, action)=>{
+    })
+        .addCase(deleteBook, (state, action)=>{
         state.books = state.books.filter(book => book.id !== action.payload.id)
     })
 })
