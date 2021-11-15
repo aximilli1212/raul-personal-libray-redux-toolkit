@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector , useDispatch } from 'react-redux'
-import {deleteBook} from "../../store/actions/bookActions";
+import {deleteBook} from "../../store/slices/bookSlice";
 
 
 const Library = () => {
@@ -14,7 +14,7 @@ const Library = () => {
   const books = useSelector((state)=> state.books.books)
 
   const booksRow = books.map(({id, title, author, rating})=>(
-      <tr>
+      <tr key={id}>
         <td>{ title}</td>
         <td>{ author}</td>
         <td>{ rating}</td>
